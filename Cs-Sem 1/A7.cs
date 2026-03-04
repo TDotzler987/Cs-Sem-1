@@ -19,6 +19,8 @@ namespace Cs_Sem_1
 
             Console.WriteLine("Erster Buchstabe: " + eing[0]);         //Ausgabe des ersten Buchstabens
             Console.WriteLine("Letzer Buchstabe: " + eing[^1]);        //Ausgabe des letzten Buchstabens
+            Console.Beep(250, 500);                                     //Beep Sound ausgeben
+            //  zwei unterschiedliche scharfe ß, das kleine ist das normale, das große wird mit Alt+Strg+Shift+ß taste gemacht ẞß
 
 
             Console.ReadKey();
