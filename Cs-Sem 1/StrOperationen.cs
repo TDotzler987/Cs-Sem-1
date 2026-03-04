@@ -62,6 +62,35 @@ namespace Cs_Sem_1
             dau = dau.Trim();
             Console.WriteLine(dau + "hat die Länge " + dau.Length);
 
+            string wh_und_Test_Variable = "      Das ist ein Test!    ";
+            Console.WriteLine(wh_und_Test_Variable.Trim().ToLower());
+
+            bool strTest3 = "Hallo" == "hallo";
+            Console.WriteLine(strTest3);
+            bool strtTest2 = "Hallo".ToLower() == "hallo".ToLower();
+            Console.WriteLine(strtTest2);
+
+            //string => Zeichenkette, Text
+            //string = char+char+char+char...
+            string strRandom = "Hallo!";
+            //     charArray =  'H' + 'a' + 'l' + 'l' + 'o'
+            Console.WriteLine(strRandom[0]);
+            Console.WriteLine(strRandom[1]);
+            Console.WriteLine(strRandom[2]);
+            Console.WriteLine(strRandom[3]);
+            Console.WriteLine(strRandom[4]);
+            Console.WriteLine(strRandom[5]);
+            Console.WriteLine(strRandom[strRandom.Length -1]);
+            //                strRandom[strRandom.Length -1]
+            Console.WriteLine(strRandom[^1]);
+            Console.WriteLine(strRandom[^2]);
+            // string.substring(Start, Wie_viele_Zeichen);
+            string gesamtString = "Hallo, mein Name ist Thomas!";
+                                   //01234567891011121314151617181920212223242526272829
+            string nameExtrahiert = gesamtString.Substring(21,7);
+            Console.WriteLine(nameExtrahiert);
+
+
 
             Console.ReadKey();
 

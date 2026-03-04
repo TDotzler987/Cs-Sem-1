@@ -11,9 +11,11 @@ internal class Program
         //Variablen.Start();
         //A_3.Start();
         //WH_Vari.Start();
-        StrOperationen.Start();
+        //StrOperationen.Start();
         //Aufg8C_.Start();
-
+        //A_5.Start();
+        //A6.Start();
+        A7.Start();
 
     }
 }
