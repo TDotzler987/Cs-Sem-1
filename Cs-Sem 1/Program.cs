@@ -16,6 +16,12 @@ internal class Program
         //A_5.Start();
         //A6.Start();
         //A7.Start();
-        A4.Start();
+        //A4.Start();
+        Kon_Aufg.Start();
+        //Array_test.Start();
+        //A9.Start();
+
+
+
     }
 }

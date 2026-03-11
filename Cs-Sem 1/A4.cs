@@ -32,8 +32,8 @@ namespace Cs_Sem_1
             
             Console.WriteLine("bitte geben Sie nun Ihre zweite Zahl ein:");
             string zahl2 = Console.ReadLine();
-            int z1 = Convert.ToInt32(zahl1); //String in Integer umwandeln
-            int z2 = Convert.ToInt32(zahl2); //String in Integer umwandeln
+            double z1 = Convert.ToDouble(zahl1); //String in Integer umwandeln
+            double z2 = Convert.ToDouble(zahl2); //String in Integer umwandeln
             var res3 = (z1 + z2);
             Console.WriteLine("Summe= "+res3);
             Console.WriteLine();
