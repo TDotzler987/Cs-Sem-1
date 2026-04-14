@@ -17,9 +17,7 @@ internal class Program
         //A6.Start();
         //A7.Start();
         //A4.Start();
-        A_classic.Start();
-
-
+        //A_classic.Start();
         //A4.Start();
         //Kon_Aufg.Start();
         //Array_test.Start();
