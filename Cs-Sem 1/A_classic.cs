@@ -26,10 +26,16 @@ namespace Cs_Sem_1
             string name = Console.ReadLine();
             Console.WriteLine("Hallo Mann/Frau/Es/unidivers "+name);
             
-            string task = Console.ReadLine();
-            string task2 = Console.ReadLine();
-            Console.Write ("Sie wollen zwei Zahlen berechnen? \n Bitte teilen Sie mir Zahl 1 mit: "+ task + " und Zahl 2: " + task2); 
+            string task ="Sie wollen zwei Zahlen berechnen? \n Bitte teilen Sie mir Zahl 1 mit: ";
+            Console.Write(task);
+            int zahl1 = Convert.ToInt32(Console.ReadLine());
 
+            string task2 = " und Zahl 2: ";
+            Console.Write(task2);
+           
+            int zahl2 = Convert.ToInt32(Console.ReadLine());
+                        int task3 = zahl1 + zahl2;
+            Console.WriteLine("Das Ergebnis aus Zahl 1 und Zahl 2 ist: "+task3);
 
 
 
