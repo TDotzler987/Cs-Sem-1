@@ -15,14 +15,16 @@ namespace Cs_Sem_1
             Console.WriteLine("Ich möchte Sie hiermit um Ihre Eingabe bitten:");
             string eing = Console.ReadLine();
             int eingabeZahl = 0;
+            int erg1 = 0;
+            int erg2 = 0;
             if (int.TryParse(eing, out eingabeZahl))
             {
-            int erg1 = eingabeZahl% 10;
+            erg1 = eingabeZahl% 10+1;
             }
             else
             {
             int eingabe =eing.Length;
-            int erg1 = eingabe*2%10;
+            erg1 = eingabe*2%10+1;
             }
                  
             Console.WriteLine( "Hier bitte ich Sie um die zweite Eingabe:");
@@ -30,16 +32,21 @@ namespace Cs_Sem_1
             int eingabeZahl2 = 0;
             if (int.TryParse(eing2, out eingabeZahl2))
             {
-            int erg2 = eingabeZahl2 *3;
+            erg2 = eingabeZahl2 *3;
             }
             else
             {
             int LängeDerEingabe2 = eing2.Length;
-            int erg2 = LängeDerEingabe2 * 5 % 100;
+            erg2 = LängeDerEingabe2 * 5 % 100;
             }
-            Console.WriteLine("Hier ist das Ergebnis:");
-            Console.WriteLine($" { erg1} / {erg2} = {erg1/erg2} );
 
+            int erg3 = erg2 / erg1;
+
+            Console.WriteLine("Hier ist das Ergebnis:" + erg2 + " / " +erg1+ " = " + erg3);
+            Console.WriteLine();
+            Console.WriteLine("-- mit beliebiger Taste beenden --");
+            Console.WriteLine();
+            Console.ReadKey();
 
 
         }
