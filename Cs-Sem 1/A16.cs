@@ -29,12 +29,13 @@ namespace Cs_Sem_1
             // prüft ob die Eingabe eine Zahl ist
             // Wenn die Eingabe eine Zahl ist, wird sie in eingabeZahl gespeichert und eingabeIstZahl ist true.
             // Wenn die Eingabe keine Zahl ist, bleibt eingabeZahl 0 und eingabeIstZahl ist false.
+            // eingabe bleibt eingabe
             
             // Berechnung der Länge der Eingabe und der Hälfte der Länge
             int längeDerEingabe = eingabe.Length;
             int half = längeDerEingabe / 2;
 
-            if (eingabeIstZahl)
+            if (eingabeIstZahl)  //da wird geprüft ob eingabeIstZahl true ist, also hier if "true"
             {
                 if (eingabeZahl % 2 == 0)
                 {
@@ -45,7 +46,7 @@ namespace Cs_Sem_1
                     Console.WriteLine($"Ihr eingegebener Wert ist {eingabeZahl} der halbierte Wert ist {eingabeZahl / 2} mit Rest 1.");
                 }
             }
-            else
+            else              //hier ist es dann false, somit ist es Text und keine Zahl
             {
                 if (längeDerEingabe % 2 == 0)
                 {

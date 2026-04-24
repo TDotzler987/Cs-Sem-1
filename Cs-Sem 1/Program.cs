@@ -25,9 +25,11 @@ internal class Program
         //A15.Start();
         //A16.Start();
         //A17.Start();
-        Notenkalkulator.Start();
+        //Notenkalkulator.Start();
+        //Try.Start();
+        Useringabe.Start();
 
 
 
-    }
+        }
 }
