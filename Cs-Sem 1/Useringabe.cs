@@ -31,14 +31,19 @@ namespace Cs_Sem_1
             "Bitte beachten Sie die Richtlinien der Passworteingabe");
             Console.WriteLine();
             Console.WriteLine();
-            while (pwSchalter) { 
+            while (pwSchalter) 
+            { 
             Console.WriteLine("bitte geben Sie nun bitte ihr Passwort ein für die Richtlinien drücke zuerst F8: ");
             
-                string password = "";
-            
-            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                 
-                if (keyInfo.Key == ConsoleKey.F8)
+                //jetzt verschluckt er den ersten Buchstaben
+                //nun wird die erste Taste angeschaut abgefangen und gespeichert und überprüft ob F8
+
+                StringBuilder password1 = new StringBuilder();
+                ConsoleKeyInfo firstKey = Console.ReadKey(true); // Erste Taste abfangen (unsichtbar)
+
+                if (firstKey.Key == ConsoleKey.F8)
+
                 {
                     Console.WriteLine();
                     Console.WriteLine(
@@ -53,41 +58,44 @@ namespace Cs_Sem_1
                     Console.WriteLine("-- weiter mit beliebiger Taste --");
                     Console.ReadKey();
                     Console.Clear();
-                    continue;
-                    //Console.WriteLine();
-                    //Console.Write("Bitte geben Sie nun Ihr Passwort ein:");
-                    //password = "";
+                    password1.Clear();
+                    continue ;
+
 
                 }
-                else
-                {
+                else 
+                    {
+                        password1.Append(firstKey.KeyChar);
+                        Console.Write("*"); // Erstes Zeichen maskieren
+                    }
 
                     ConsoleKeyInfo key;
+
 
                     do
                     {
                         key = Console.ReadKey(true);
                         if (key.Key != ConsoleKey.Enter && key.Key != ConsoleKey.Backspace)
                         {
-                            password += key.KeyChar;
+                            password1.Append(key.KeyChar);
                             Console.Write("*"); // Zeigt * statt Zeichen
                         }
-                        else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                        else if (key.Key == ConsoleKey.Backspace && password1.Length > 0)
                         {
-                            password = password.Substring(0, (password.Length - 1));
-                            Console.Write("\b \b"); // Löscht das Sternchen in der Konsole
+                            password1 = password1.Remove(password1.Length -1, 1);
+                            Console.Write("\b \b"); // Löscht das letzte Sternchen in der Konsole
                         }
                     } while (key.Key != ConsoleKey.Enter);
-
+                
                     Console.WriteLine();
-
+                    string password = password1.ToString();
                     if (password.Length < 8)
                     {
                         Console.WriteLine("Passwort zu kurz, Passwort mindestens 8 Zeichen lang");
                     }
                     else
                     {
-                        bool hatSonderzeichen = password.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c));
+                        bool hatSonderzeichen = password.ToString().Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c));
                         if (!hatSonderzeichen)
                         {
                             Console.WriteLine("Passwort braucht mindestens ein Sonderzeichen");
@@ -112,7 +120,7 @@ namespace Cs_Sem_1
                                     Console.Write("\b \b"); // Löscht das Sternchen in der Konsole
                                 }
                             } while (key.Key != ConsoleKey.Enter);
-
+                            
                             Console.WriteLine();
 
                             if (password == password2)
@@ -127,13 +135,13 @@ namespace Cs_Sem_1
                                 Console.Write("Username: ");
                                 string Username = Console.ReadLine();
                                 string[] unzulässigerUsername = {
-                    "Teufel",
-                    "Hitler",
-                    "Gott",
-                    "Meister",
-                    "Chef",
-                    "chef",
-                    "Sexgott"
+                                "Teufel",
+                                "Hitler",
+                                "Gott",
+                                "Meister",
+                                "Chef",
+                                "chef",
+                                "Sexgott"
                     };
 
 
@@ -148,15 +156,20 @@ namespace Cs_Sem_1
                                 }
                                 else
                                 {
-
-                                    bool Usernamezahl = int.TryParse(Username, out int userZahl);
-                                    if (Usernamezahl)
-                                    {
-                                        Console.WriteLine("bitte keine Zahlen eingeben");
-                                        return;
-                                    }
-                                    else
-                                        Console.Write("Passwort: ");
+                                
+                                {
+                                    
+                                }
+                                bool Usernamezahl = int.TryParse(Username, out int userZahl);
+                                if (Usernamezahl)
+                                {
+                                    Console.WriteLine("bitte keine Zahlen eingeben");
+                                    return;
+                                }
+                                else
+                                    
+                                      
+                                    Console.Write("Passwort: ");
                                     Console.WriteLine("(achten Sie auf Groß- und Kleinschreibung)");
                                     string Password = "";
                                     do
@@ -173,6 +186,7 @@ namespace Cs_Sem_1
                                             Console.Write("\b \b"); // Löscht das Sternchen in der Konsole
                                         }
                                     } while (key.Key != ConsoleKey.Enter);
+                                
 
                                     Console.WriteLine();
 
@@ -184,7 +198,7 @@ namespace Cs_Sem_1
                                         if (istPassWortFalsch)
                                         {
                                             Console.WriteLine(" - Sie haben Ihr Passwort jetzt schon vergessen! - ");
-                                            return;
+                                        
                                             //Fehlermeldung 
                                         }
                                         else
@@ -208,4 +222,4 @@ namespace Cs_Sem_1
             }
         }
     }
-}
+
