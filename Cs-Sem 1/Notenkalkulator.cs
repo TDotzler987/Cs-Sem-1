@@ -57,7 +57,7 @@ namespace Cs_Sem_1
             else
 
             {
-                Console.WriteLine(ausgabe[0]);
+                Console.WriteLine(ausgabe[note]);
             }
             
           
