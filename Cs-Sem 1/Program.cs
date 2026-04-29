@@ -27,7 +27,8 @@ internal class Program
         //A17.Start();
         //Notenkalkulator.Start();
         //Try.Start();
-        Useringabe.Start();
+        //Useringabe.Start();
+        Schalter.Start();
 
 
 

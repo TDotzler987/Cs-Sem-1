@@ -11,11 +11,11 @@ namespace Cs_Sem_1
         public static void Start()
         {
 
-            char name = z;
-            string str = String_Array.length;
+            //char name = z;
+            //string str = String_Array.length;
             
             
-            int i = Console.ReadLine();
+            //int i = Console.ReadLine();
             
 
         }
