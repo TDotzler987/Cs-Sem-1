@@ -133,6 +133,10 @@ namespace Cs_Sem_1
                             Console.Clear();
                             Console.WriteLine("Kenne, Griaß Di!");
                             break;
+                        case "ahoi" or "helas" or "ciao":
+                            Console.Clear();
+                            Console.WriteLine("des is koi Begrüßung");
+                             break;
                         case "hi" or "hallo" or "guten tag" or "grüß sie" or "grüß dich" or "gruess dich":
                             Console.Clear();
                             Console.WriteLine("Diese Eingabe ist mir bekannt, Guten Tag auch");

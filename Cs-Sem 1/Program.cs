@@ -28,8 +28,8 @@ internal class Program
         //Notenkalkulator.Start();
         //Try.Start();
         //Useringabe.Start();
-        Schalter.Start();
-
+        //Schalter.Start();
+        versuch.Start();
 
 
         }
