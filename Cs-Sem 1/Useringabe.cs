@@ -45,6 +45,7 @@ namespace Cs_Sem_1
                 if (firstKey.Key == ConsoleKey.F8)
 
                 {
+                    Console.Clear();
                     Console.WriteLine();
                     Console.WriteLine(
                         "Richtlinien Usereingabe \n" +
@@ -103,6 +104,7 @@ namespace Cs_Sem_1
                         }
                         else
                         {
+
                             Console.Write("bitte wiederholen Sie Ihre Eingabe: ");
                             Console.WriteLine("(achten Sie auf Groß- und Kleinschreibung)");
                             string password2 = "";
@@ -130,6 +132,7 @@ namespace Cs_Sem_1
                                 Console.WriteLine();
                                 Console.WriteLine(" - so, nun drücken Sie eine Taste - ");
                                 Console.ReadKey();
+                                Console.Clear();
                                 Console.WriteLine();
                                 Console.WriteLine();
                                 Console.Write("Username: ");
@@ -142,7 +145,7 @@ namespace Cs_Sem_1
                                 "Chef",
                                 "chef",
                                 "Sexgott"
-                    };
+                            };
 
 
                                 if (Username == unzulässigerUsername[0] || Username == unzulässigerUsername[1]
