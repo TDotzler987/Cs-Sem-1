@@ -26,17 +26,18 @@ namespace Cs_Sem_1
             //Console.WriteLine(ausgabe[1]);
             //string str = ".-.";
             //string[] strArray = new string[10];
-            Console.Write("Bitte geben Sie die Punkte(0-100) als Ganzzahl ein: ");
+            Console.WriteLine();
+            Console.Write("Bitte geben Sie ihre erreichte Punktzahl ein: ");
             string eingabeST = Console.ReadLine();
             Console.Write("und nun geben Sie bitte die maximal erreichbaren Punkte als Ganzzahl ein: ");
             string maxPunkteSTR = Console.ReadLine();
 
-            bool istEingabGanzzahl = int.TryParse(eingabeST, out int punkt);
+            bool istEingabGanzzahl = double.TryParse(eingabeST, out double punkt);
             bool istEingabeGanzzahl = int.TryParse(maxPunkteSTR, out int maxPunkte);
 
             if (istEingabGanzzahl && istEingabeGanzzahl)
             {
-                int punkte = (punkt * 100 / maxPunkte);
+                double punkte = (punkt * 100 / maxPunkte);
 
                 if (punkte >= 0 && punkte <= 100)
                 {
@@ -57,7 +58,9 @@ namespace Cs_Sem_1
             else
 
             {
-                Console.WriteLine(ausgabe[note]);
+                Console.Clear();
+                Console.WriteLine("bitte eine halten Sie sich an die vorgeschriebenen Eingabemodalitäten");
+                return;
             }
             
           
