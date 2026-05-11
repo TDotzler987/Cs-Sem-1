@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
@@ -139,53 +140,63 @@ namespace Cs_Sem_1
                   
             }
             */
+
             /*
+               Console.WriteLine("nun werden alle gerade Zahlen zwischen 0 und 20 ausgegeben:");
+               Console.WriteLine("weiter mit beliebiger Taste");
+               Console.Clear();
 
-            Console.WriteLine("nun werden alle gerade Zahlen zwischen 0 und 20 ausgegeben:");
-            Console.WriteLine("weiter mit beliebiger Taste");
-            Console.Clear();
+               Console.WriteLine();
 
-            Console.WriteLine();
-            bool modulo2 = true;
-            int zahl1 = 0;
-            while (true)
-            {
+               int zahl1 = 0;
+               while (zahl1 <= 21)
+               {
 
-                Console.WriteLine("Durchgang " + zahl1);
-                zahl1 = zahl1+ 2;
-                if (zahl1 == 32)
-                {
-                    modulo2 = false;
-                    Console.WriteLine("fertsch");
+                   Console.WriteLine("Durchgang " + zahl1);
+                   zahl1 = zahl1 + 2;
+               }
+               Console.WriteLine();
+               Console.WriteLine("fertsch");
 
-                }
-            }
-            */
+
+              int counter = 0;
+              while (counter <= 20)
+               {
+                  if (counter % 2 == 0)
+                  {
+                      Console.WriteLine (counter);
+                  }
+                  counter ++;
+               }
+   */
+
+            /*
+             */
 
             Console.WriteLine("bis zu welcher Zahl soll es denn ausgegeben werden? \n bitte um Eingabe");
             string eing = Console.ReadLine();
-            int zahlnull = 0;
+            int summe = 0;
             int zahl = 0;
-            
+
             bool eingzahl = int.TryParse(eing, out zahl);
             if (eingzahl)
             {
                 Console.WriteLine("also bis " + zahl);
-                bool zahlenk = true;
-                while (true)
-                {
-                    zahlnull = zahl+(zahl-1);
-                    Console.WriteLine(zahl);
-                    if (zahl == 0)
-                    {
-                        zahlenk = false;
-                    }
-                                       
-                }
-                Console.WriteLine("Ergebnis: " +zahlnull);
-            }
-            Console.WriteLine();
 
+
+                for (int i = 0; i <= zahl; i++)
+                { 
+                    summe += i;
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("Ergebnis der Summe von 0 bis " + eing + " = " + summe);
+
+            }
+            else
+            {
+                Console.WriteLine("bitte gib eine Zahl ein");
+            }
         }
     }
 }
