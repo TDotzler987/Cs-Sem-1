@@ -172,18 +172,17 @@ namespace Cs_Sem_1
 
             /*
              */
+            /*
 
-            Console.WriteLine("bis zu welcher Zahl soll es denn ausgegeben werden? \n bitte um Eingabe");
+            Console.WriteLine("bis zu welcher Zahl soll es denn ausgegeben werden?");
             string eing = Console.ReadLine();
             int summe = 0;
             int zahl = 0;
+        
 
             bool eingzahl = int.TryParse(eing, out zahl);
             if (eingzahl)
             {
-                Console.WriteLine("also bis " + zahl);
-
-
                 for (int i = 0; i <= zahl; i++)
                 { 
                     summe += i;
@@ -191,12 +190,33 @@ namespace Cs_Sem_1
 
                 Console.WriteLine();
                 Console.WriteLine("Ergebnis der Summe von 0 bis " + eing + " = " + summe);
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
 
             }
             else
             {
                 Console.WriteLine("bitte gib eine Zahl ein");
             }
+            */
+            Console.WriteLine("bitte eine Zahl zwischen 1 - 25 eingeben");
+            int eingabZ = -1;
+            int produkt = 1;
+            while (!int.TryParse(Console.ReadLine(), out eingabZ) || eingabZ > 25 || eingabZ <= 0);
+            {
+                Console.WriteLine("falsche Eingabe");
+            }
+            Console.Clear();
+
+            while (eingabZ > 0)
+            {
+                produkt *= eingabZ;
+                Console.WriteLine(eingabZ + " * ");
+                eingabZ -= 1;
+                
+            }
+            Console.WriteLine(" = " + produkt);
         }
     }
 }
