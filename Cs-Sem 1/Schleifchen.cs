@@ -200,6 +200,7 @@ namespace Cs_Sem_1
                 Console.WriteLine("bitte gib eine Zahl ein");
             }
             */
+
             Console.WriteLine("bitte eine Zahl zwischen 1 - 25 eingeben");
             int eingabZ = -1;
             int produkt = 1;
@@ -212,11 +213,11 @@ namespace Cs_Sem_1
             while (eingabZ > 0)
             {
                 produkt *= eingabZ;
-                Console.WriteLine(eingabZ + " * ");
+                Console.Write(eingabZ + " * ");
                 eingabZ -= 1;
                 
             }
-            Console.WriteLine(" = " + produkt);
+            Console.WriteLine("\b\b = " + produkt);
         }
     }
 }
