@@ -31,8 +31,8 @@ internal class Program
         //Schalter.Start();
         //versuch.Start();
         //Schleifchen.Start();
-        Sch4.Start();
-
+        //Sch4.Start();
+        SchlArr.Start();
 
         }
 }
