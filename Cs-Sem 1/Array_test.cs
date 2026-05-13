@@ -62,7 +62,7 @@ namespace Cs_Sem_1
             char c= 'l';
             char d= 'l';
             char e= 'o';
-
+            Console.WriteLine($"{a}{b}{c}{d}{d}{e}");
             //Andere Möglichkeiten:
             //int - Array deklarieren
             //int[] intArray1;
