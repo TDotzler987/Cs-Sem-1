@@ -33,6 +33,9 @@ internal class Program
         //Schleifchen.Start();
         //Sch4.Start();
         //SchlArr.Start();
-        For5.Start();
+        //For5.Start();
+        //wh_schleife.Start();
+        Aufgabe02_Serverlogs.Start();
+
         }
 }
