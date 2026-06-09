@@ -138,10 +138,16 @@ class Aufgabe02_Serverlogs
         Console.WriteLine("--- Statuscode-Verteilung ---");
 
         // TODO Aufgabe 3 – dein Code hier:
-        foreach (
+        
+        int count200 = statuscodes.Count(x => x == 200);
+        int count301 = statuscodes.Count(x => x == 301);
+        int count404 = statuscodes.Count(x => x == 404);
+        int count500 = statuscodes.Count(x => x == 500);
 
-
-
+        Console.WriteLine("200 OK:           " + count200 + " Anfragen");
+        Console.WriteLine("301 Redirect:      " + count301 + " Anfragen");
+        Console.WriteLine("404 Not Found:     " + count404 + " Anfragen");
+        Console.WriteLine("500 Server Error:  " + count500 + " Anfragen");
 
         Console.WriteLine();
 
