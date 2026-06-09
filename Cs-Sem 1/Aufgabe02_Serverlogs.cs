@@ -169,6 +169,14 @@ class Aufgabe02_Serverlogs
 
         // TODO Aufgabe 4 – dein Code hier:
 
+        for (int i = 0; i < statuscodes.Length; i++)
+        {
+            if (statuscodes[i] != 200)
+            {
+                string fehler = statuscodes[i] == 500 ? " ← FEHLER (kritisch)" : " ← FEHLER";
+                Console.WriteLine($"Anfrage {i + 1}: {endpunkte[i],-15} | Status {statuscodes[i],-3} | {antwortzeiten[i],4} ms{fehler}");
+            }
+        }
 
 
 
