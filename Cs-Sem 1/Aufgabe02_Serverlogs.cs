@@ -179,7 +179,6 @@ class Aufgabe02_Serverlogs
         }
 
 
-
         Console.WriteLine();
 
 
