@@ -18,6 +18,7 @@
 // ============================================================
 
 using System;
+using System.ComponentModel.DataAnnotations;
 
 class Aufgabe02_Serverlogs
 {
@@ -138,8 +139,8 @@ class Aufgabe02_Serverlogs
         Console.WriteLine("--- Statuscode-Verteilung ---");
 
         // TODO Aufgabe 3 – dein Code hier:
-        
-        int count200 = statuscodes.Count(x => x == 200);
+        int counttot = statuscodes.Count();
+        int count200 = statuscodes.Count(x => x == 200);//Lambda funktion
         int count301 = statuscodes.Count(x => x == 301);
         int count404 = statuscodes.Count(x => x == 404);
         int count500 = statuscodes.Count(x => x == 500);
@@ -173,8 +174,8 @@ class Aufgabe02_Serverlogs
         {
             if (statuscodes[i] != 200)
             {
-                string fehler = statuscodes[i] == 500 ? " ←  FEHLER (kritisch)" : " ←  FEHLER";
-                Console.WriteLine($"Anfrage {i + 1}: {endpunkte[i],-15} | Status {statuscodes[i],-3} | {antwortzeiten[i],4} ms{ fehler}");
+                string fehler = statuscodes[i] == 500 ? " FEHLER (kritisch)" : " FEHLER";
+                Console.WriteLine($"Anfrage {i + 1}: {endpunkte[i],-15} | Status {statuscodes[i],-3} | {antwortzeiten[i]} ms{fehler}");
             }
         }
         Console.WriteLine("Server Error 500:  " + count500 + " kritische Anfragen");
@@ -202,15 +203,11 @@ class Aufgabe02_Serverlogs
 
         // TODO Aufgabe 5 – dein Code hier:
 
-        for (int i = 0; i < antwortzeiten.Length; i++)
-        {
-            if (antwortzeiten[i] > 400)
-            {
-                Console.WriteLine($"SLA-Verletzung: Anfrage {i + 1} | Endpunkt: {endpunkte[i]} | Status: {statuscodes[i]} | Antwortzeit: {antwortzeiten[i]} ms");
-            }
-        }
+        int ant404 = antwortzeiten.Count(x=> x >  400);
+        int ant500 = antwortzeiten.Count(x => x > 500);
 
-
+        Console.WriteLine($"SLA-Verletzungen: {ant404} von {counttot} ({(100*ant404)/counttot}% \n davon sind {ant500} = {100*ant500/counttot}%  kritisch (>500ms) ");
+       
 
         Console.WriteLine();
 
@@ -237,8 +234,33 @@ class Aufgabe02_Serverlogs
         Console.WriteLine("--- Endpunkt-Häufigkeit ---");
 
         // TODO Aufgabe 6 – dein Code hier:
+        
+        
+        int f = 0;
+        // Äußere while-Schleife läuft durch das einzigartig Array
+        while (f < einzigartig.Length)
+        {
+            string suchWort = einzigartig[f];
+            int zaehler = 0;
+            int j = 0;
 
+            // Innere while-Schleife läuft durch das endpunkte Array
+            while (j < endpunkte.Length)
+            {
+                switch (endpunkte[j])
+                {
+                    case var wort when wort == suchWort:
+                        zaehler++;
+                        break;
+                    default:
+                        break;
+                }
+                j++; // Wichtig: Inneren Index erhöhen
+            }
 
+            Console.WriteLine($" Das Wort '{suchWort,-12}'  ist {zaehler,3}x enthalten.");
+            f++; // Wichtig: Äußeren Index erhöhen
+        }
 
 
         Console.WriteLine();
