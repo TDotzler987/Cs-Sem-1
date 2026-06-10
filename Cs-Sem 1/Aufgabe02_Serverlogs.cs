@@ -60,7 +60,7 @@ class Aufgabe02_Serverlogs
             "/api/data",   "/login",      "/api/delete", "/home",       "/profile"
         };
 
-        Console.WriteLine("=== Serverlog-Auswertung | Letzde Stunde ===");
+        Console.WriteLine("=== Serverlog-Auswertung | Letzte Stunde ===");
         Console.WriteLine($"Ausgewertete Anfragen: {antwortzeiten.Length}");
         Console.WriteLine();
 
@@ -173,11 +173,11 @@ class Aufgabe02_Serverlogs
         {
             if (statuscodes[i] != 200)
             {
-                string fehler = statuscodes[i] == 500 ? " ← FEHLER (kritisch)" : " ← FEHLER";
-                Console.WriteLine($"Anfrage {i + 1}: {endpunkte[i],-15} | Status {statuscodes[i],-3} | {antwortzeiten[i],4} ms{fehler}");
+                string fehler = statuscodes[i] == 500 ? " ←  FEHLER (kritisch)" : " ←  FEHLER";
+                Console.WriteLine($"Anfrage {i + 1}: {endpunkte[i],-15} | Status {statuscodes[i],-3} | {antwortzeiten[i],4} ms{ fehler}");
             }
         }
-
+        Console.WriteLine("Server Error 500:  " + count500 + " kritische Anfragen");
 
         Console.WriteLine();
 
@@ -202,6 +202,13 @@ class Aufgabe02_Serverlogs
 
         // TODO Aufgabe 5 – dein Code hier:
 
+        for (int i = 0; i < antwortzeiten.Length; i++)
+        {
+            if (antwortzeiten[i] > 400)
+            {
+                Console.WriteLine($"SLA-Verletzung: Anfrage {i + 1} | Endpunkt: {endpunkte[i]} | Status: {statuscodes[i]} | Antwortzeit: {antwortzeiten[i]} ms");
+            }
+        }
 
 
 
