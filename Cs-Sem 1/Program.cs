@@ -36,7 +36,9 @@ internal class Program
         //For5.Start();
         //wh_schleife.Start();
         //Aufgabe02_Serverlogs.Start();
-        Bytemarkt.Start();
+        //Bytemarkt.Start();
+        Aufgabe03_Lager.Start();
 
-        }
+
+    }
 }
