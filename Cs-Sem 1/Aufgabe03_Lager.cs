@@ -291,13 +291,20 @@ internal class Aufgabe03_Lager
 
         // TODO Aufgabe 5 – dein Code hier:
 
-        int katAnz = alleKategorien.Length;
-        for (int i = 0; i <= alleKategorien.Length; i++)
+      
+
+        //katAnz =  ( verkaufspreis[i] - einkaufspreis[i] );
+        int u = alleKategorien.Length;
+        double[] UmsPot = new double [u];
+
+        for (int i = 0; i < u; i++)
         {
-            katAnz++;
-            //katAnz =  ( verkaufspreis[i] - einkaufspreis[i] );
+            UmsPot[i] = verkaufspreis [i] * bestand [i];
+            for (int j = 0; j < u; j++)
+            {
+
+            }
         }
-     
 
 
         Console.WriteLine();

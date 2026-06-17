@@ -200,7 +200,7 @@ namespace Cs_Sem_1
                 Console.WriteLine("bitte gib eine Zahl ein");
             }
             */
-
+            /*
             Console.WriteLine("bitte eine Zahl zwischen 1 - 25 eingeben");
             int eingabZ = -1;
             int produkt = 1;
@@ -218,6 +218,109 @@ namespace Cs_Sem_1
                 
             }
             Console.WriteLine("\b\b = " + produkt);
+            
+            bool schalter = true;
+            while (schalter) //wiederhole das in den Klammern solange bis es (true) wird
+            {
+                if (TASTE GEDRÜCKT)  //müste man mit Console.ReadKey/ReadLine implementieren
+                        {
+                    schalter = false;
+                }
+            }
+
+            */
+
+
+
+
+            //while-Schleife
+            // tue etwas, solange (true) steht
+
+            int x = 0;
+            while (x <10)
+            {
+                Console.WriteLine(x);
+                x++;
+            }
+            // for- Schleife 
+            //variable, Boolscher Ausdruck, Variablenveränderung
+            //Zählergesteuerte Schleife
+            for (int y = 0; y < 10; y++)
+            {
+                Console.WriteLine(y);
+            }
+            int[] intARR = { 666, 42, 6, 7, 88, 90, 103, 4};
+            string[] stringARR = { "Test", "Hallo", "Lagerregal", "Platzhalter", "Mütze", "Kopf", "Projekt", "Management" };
+            for (int i = 0; i < stringARR.Length; i++)
+            {
+                Console.WriteLine($"Auf Position {i} gilt für die Nummer: {intARR[i]} gilt der string: {stringARR[stringARR.Length - 1 - i]}");
+                intARR[i] = i * i;
+            }
+
+
+            for ( int y = 1; y>= 0;  y *= 10 )
+            {
+                Console.WriteLine(y);
+            }
+
+            //foreach - Schleife
+            //nur lese-Zugriff
+            //foreach (Variable in Array/Liste)
+            foreach (int i in intARR)
+            {
+                Console.WriteLine(i);
+            }
+            foreach(string str in stringARR)
+            { 
+                Console.WriteLine(str);
+            }
+
+            //Alternativ: 
+            foreach (var i in  intARR)
+            {
+                Console.WriteLine(i);
+            }
+            /*
+            while (false)
+            {
+                Console.WriteLine("ich bin die while-Schleife");
+            }
+            */
+
+            string? pswd = "passwort 123";
+            bool falschesPasswort = true;
+            int pwVersuche = 0;
+            string ende = ("ende gut, alles gut");
+            string stopp = ("nix gut");
+
+            do
+            {
+                Console.WriteLine("Bitte Passwort eingeben: ");
+                string? eing = Console.ReadLine();
+                if (eing == pswd) 
+                {
+                    falschesPasswort = false;
+                    Console.WriteLine(ende);
+                    
+                }                
+                else
+                {
+                    pwVersuche++;
+                }
+                Console.Clear();
+                if (pwVersuche >= 3)
+                {
+                    Console.WriteLine("zu viele Versuche");
+                    falschesPasswort = false;
+                    Console.WriteLine(stopp);
+                }
+                    
+            }
+
+            while (falschesPasswort);
+
+
         }
     }
+
 }
