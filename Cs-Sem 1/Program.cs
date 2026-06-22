@@ -37,7 +37,8 @@ internal class Program
         //wh_schleife.Start();
         //Aufgabe02_Serverlogs.Start();
         //Bytemarkt.Start();
-        Aufgabe03_Lager.Start();
+        //Aufgabe03_Lager.Start();
+        zahlenRaetsel.Start();
 
 
     }
