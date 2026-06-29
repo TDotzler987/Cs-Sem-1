@@ -18,18 +18,20 @@ namespace Cs_Sem_1
             bool zahlValide = false;
             uint rdZähler = 0;
             Random rnd = new Random();
-            int gesuchteZahl = rnd.Next(-1000, 1001); //erzeugt Zufallszahl zw. -1000 u. 1000)
+            int gesuchteZahl = rnd.Next(4, 8); //erzeugt Zufallszahl zw. -1000 u. 1000)
             Console.WriteLine("-------------------------------------------------");
             Console.WriteLine("=============  Herzlich Willkommen  =============");
             Console.WriteLine("_________________________________________________");
             Console.WriteLine();
-            Console.ReadKey();
             Console.WriteLine(" - weiter mit beliebiger Taste - ");
+            Console.ReadKey();
+
             Console.WriteLine();
             Console.WriteLine();
+            Console.WriteLine("Bitte gib eine zwischen Zahl -1000 und 1000 ein: ");
+
             do
             {
-                Console.WriteLine("Bitte gib eine zwischen Zahl -1000 und 1000 ein: ");
 
                 string uein = Console.ReadLine();
                 bool zahl = int.TryParse(uein, out int uzahl);
@@ -44,7 +46,7 @@ namespace Cs_Sem_1
                                 Console.WriteLine("Treffer");
                                 Console.WriteLine();
 
-                                Console.WriteLine($" \n \n *** \n sie haben die Zahl mit {anzahlgemachterVersuche}von {ANZAHL_MAXIMALER_VERSUCHE} erraten");
+                                Console.WriteLine($" \n \n *** \n sie haben die Zahl mit {rdZähler+1}von {ANZAHL_MAXIMALER_VERSUCHE} erraten");
                                 zahlValide = true;
                             }
                             else
@@ -54,7 +56,7 @@ namespace Cs_Sem_1
                                     rdZähler++;
                                     Console.WriteLine("Ihre Zahl ist zu groß <<<<");
                                     Console.WriteLine();
-                                    Console.WriteLine($" \n \n ==> übrige Versuche {anzahlgemachterVersuche}von {ANZAHL_MAXIMALER_VERSUCHE}");
+                                    Console.WriteLine($" \n \n ==> übrige Versuche {rdZähler+1}von {ANZAHL_MAXIMALER_VERSUCHE}");
 
 
                                 }
@@ -63,7 +65,7 @@ namespace Cs_Sem_1
                                     rdZähler++;
                                     Console.WriteLine("Ihre Zahl ist zu klein >>>>");
                                     Console.WriteLine();
-                                    Console.WriteLine($" \n \n ==> übrige Versuche {anzahlgemachterVersuche}von {ANZAHL_MAXIMALER_VERSUCHE}");
+                                    Console.WriteLine($" \n \n ==> übrige Versuche {rdZähler+1}von {ANZAHL_MAXIMALER_VERSUCHE}");
                                 }
 
                             }
@@ -73,7 +75,7 @@ namespace Cs_Sem_1
                         else
                         {
                             rdZähler++;
-                            Console.WriteLine($"Bitte nur zwischen -1000 und 1000 Zahlen eingeben! \n \n ==> Versuche {rdZähler}von {ANZAHL_MAXIMALER_VERSUCHE}");
+                            Console.WriteLine($"Bitte nur zwischen -1000 und 1000 Zahlen eingeben! \n \n ==> Versuche {rdZähler+1}von {ANZAHL_MAXIMALER_VERSUCHE}");
 
                         }
 
@@ -82,7 +84,7 @@ namespace Cs_Sem_1
                     else
                     {
                         rdZähler++;
-                        Console.WriteLine($"Bitte nur Zahlen eingeben! \n \n ==> Versuche {rdZähler}von {ANZAHL_MAXIMALER_VERSUCHE}");
+                        Console.WriteLine($"Bitte nur Zahlen eingeben! \n \n ==> Versuche {rdZähler + 1}von {ANZAHL_MAXIMALER_VERSUCHE}");
 
                     }
                 }
@@ -94,7 +96,7 @@ namespace Cs_Sem_1
             }
             while (!zahlValide);
             {
-                Console.WriteLine($"Herzlichen Glückwunsch! \n  du hast die Zahl beim {rdZähler} Versuch erraten");
+                Console.WriteLine($"Herzlichen Glückwunsch! \n  du hast die Zahl beim {rdZähler+1}. Versuch erraten");
             }
 
 

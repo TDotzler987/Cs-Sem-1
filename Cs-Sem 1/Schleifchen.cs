@@ -4,6 +4,7 @@ using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Cs_Sem_1
@@ -228,7 +229,7 @@ namespace Cs_Sem_1
                 }
             }
 
-            */
+            
 
 
 
@@ -285,7 +286,7 @@ namespace Cs_Sem_1
             {
                 Console.WriteLine("ich bin die while-Schleife");
             }
-            */
+            
 
             string? pswd = "passwort 123";
             bool falschesPasswort = true;
@@ -319,8 +320,155 @@ namespace Cs_Sem_1
 
             while (falschesPasswort);
 
+            */
+
+            /*
+            
+            Console.WriteLine("Aufgabe i) \n Bitte gib eine Zahl von 1 - 20 ein:");
+            string uein = Console.ReadLine();
+            bool zahl = int.TryParse(uein, out int uzahl);
+            if (zahl && 0 < uzahl && uzahl < 21)
+            {
+                for (int i = 0; i < uzahl; i++)
+                {
+                    for (int j = 0; j < uzahl; j++)
+                    {
+                        Console.Write("X");
+                    }
+                    Console.WriteLine();
+                }    
+               
+            }
+            else
+            {
+                Console.WriteLine("Bitte gib nur eine Zahl zwischen 1 - 20 ein!");
+                return;
+            }
+            Console.WriteLine("Aufgabe ii) \n Bitte gib eine Zahl von 1 - 20 ein:");
+            string ueinb = Console.ReadLine();
+            bool zahlb = int.TryParse(ueinb, out int uzahlb);
+            if (zahlb && 0 < uzahlb && uzahlb < 21)
+            {
+                for (int i = 0; i < uzahlb; i++)
+                {
+                    for (int j = 0; j < uzahlb; j++)
+                    {
+                        if (j <= i)
+                        {
+                            Console.Write("X");
+
+                        }
+                        else
+                        {
+                            Console.Write("_");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Bitte gib nur eine Zahl zwischen 1 - 20 ein!");
+                return;
+            }
+            Console.WriteLine("Aufgabe iii) \n Bitte gib eine Zahl von 1 - 20 ein:");
+            string ueinc = Console.ReadLine();
+            bool zahlc = int.TryParse(ueinc, out int uzahlc);
+            if (zahlc && 0 < uzahlc && uzahlc < 21)
+            {
+                for (int i = 0; i < uzahlc; i++)
+                {
+                    for (int j = 0; j < uzahlc; j++)
+                    {
+                        if (uzahl -i-1 >= j)
+                        {
+                            Console.Write("X");
+
+                        }
+                        else
+                        {
+                            Console.Write("_");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Bitte gib nur eine Zahl zwischen 1 - 20 ein!");
+                return;
+            }
+            Console.WriteLine("Aufgabe iv) \n Bitte gib eine Zahl von 1 - 20 ein:");
+            string ueind = Console.ReadLine();
+            bool zahld = int.TryParse(ueind, out int uzahld);
+            if (zahld && 0 < uzahld && uzahld < 21)
+            {
+                for (int i = 0; i < uzahld; i++)
+                {
+                    for (int j = 0; j < uzahld; j++)
+                    {
+                        if (i >= uzahld-j-1)
+                        {
+                            Console.Write("X");
+
+                        }
+                        else
+                        {
+                            Console.Write("_");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Bitte gib nur eine Zahl zwischen 1 - 20 ein!");
+                return;
+            }
+            */
+
+            Console.WriteLine("Aufgabe 2) \n Bitte gib eine ungerade Zahl von 1 - 21 ein:");
+            string uein2 = Console.ReadLine();
+            bool zahl2 = int.TryParse(uein2, out int uzahl2);
+            if (zahl2 && 0 < uzahl2 && uzahl2 < 22 && uzahl2 %2 ==1)
+            {
+
+                for (int j = 0; j < uzahl2; j++)
+                {
+                    int r = 1;
+                    while (r < uzahl2 % 2 - r)
+                    {
+                        Console.Write("_");
+                        r++;
+
+                    }
+                    while (r == j)
+                    {
+                        Console.Write("X");
+                        r++;
+                    }
+                    while (r <= uzahl2)
+                    {
+                        Console.Write("_");
+                        r++;
+                    }
+
+
+                    Console.WriteLine();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("Bitte gib nur eine Zahl zwischen 1 - 21 ein!");
+                return;
+            }
 
         }
+
     }
 
 }

@@ -38,7 +38,8 @@ internal class Program
         //Aufgabe02_Serverlogs.Start();
         //Bytemarkt.Start();
         //Aufgabe03_Lager.Start();
-        zahlenRaetsel.Start();
+        //zahlenRaetsel.Start();
+        arrforSchl.Start();
 
 
     }
